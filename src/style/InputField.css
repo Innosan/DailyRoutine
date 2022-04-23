@@ -1,0 +1,35 @@
+.InputForm {
+    display: flex;
+    align-items: center;
+    height: 53px;
+}
+
+.TaskField {
+    font-family: Josefin;
+    font-size: 24px;
+    width: 483px;
+    height: 53px;
+    background-color: white;
+    border-radius: 38px;
+    border: none;
+    margin-right: 27px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.AddTaskBtn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: #F2BC79;
+    border: none;
+    transition: .5s;
+}
+
+.AddTaskBtn:hover {
+    background-color: #7fe95f;
+}
+
+.AddTaskBtn img {
+    padding-top: 3px;
+}

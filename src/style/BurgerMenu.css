@@ -1,0 +1,22 @@
+.BurgerMenu {
+    display: none;
+}
+
+@media screen and (max-width: 425px) {
+    .BurgerMenu {
+        display: block;
+        margin-right: 28px;
+        background: rgba(0, 0, 0, 0);
+        border: none;
+    }
+
+    .Bar1,
+    .Bar2,
+    .Bar3 {
+        width: 33px;
+        height: 3.84px;
+        background-color: #F2BC79;
+        border-radius: 24px;
+        margin: 3.5px 0;
+    }
+}

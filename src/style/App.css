@@ -1,0 +1,77 @@
+.App {
+    font-family: Josefin;
+    width: 1040px;
+    margin: 0 auto;
+}
+
+.LogoText {
+    font-size: 36px;
+    color: #F2BC79;
+}
+
+.HeaderNav {
+    display: flex;
+}
+
+.HeaderNav a {
+    font-size: 25px;
+    margin-inline-start: 15px;
+    margin-inline-end: 15px;
+    transition: .5s;
+    border-radius: 24px;
+}
+
+.HeaderNav a:hover {
+    padding: 8px 12px 6px 12px;
+    margin: -8px 3px -6px 3px;
+    color: #353535;
+    background-color: #F2BC79;
+    border-radius: 24px;
+}
+
+.MainNavMenu {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin-right: 70px;
+}
+
+.MainNavMenu a {
+    font-size: 26px;
+    margin-bottom: 35px;
+    transition: .5s;
+    width: fit-content;
+}
+
+.MainNavMenu a:hover {
+    font-size: 36px;
+    color: #F2BC79;
+}
+
+.CreateAccountBtn {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(116deg) brightness(103%) contrast(101%);
+}
+
+.MainWindow {
+    display: flex;
+    margin: 70px 0 0 35px;
+}
+
+@media screen and (max-width: 425px) {
+    .App {
+        width: 100%;
+    }
+
+    .LogoText {
+        margin: 20px 0 0 15px;
+    }
+
+    .MainNavMenu,
+    .HeaderNav {
+        display: none;
+    }
+
+    .CreateAccountBtn {
+        display: none;
+    }
+}
