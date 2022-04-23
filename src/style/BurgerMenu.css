@@ -1,18 +1,18 @@
-.BurgerMenu {
+.burger-menu {
     display: none;
 }
 
 @media screen and (max-width: 425px) {
-    .BurgerMenu {
+    .burger-menu {
         display: block;
         margin-right: 28px;
         background: rgba(0, 0, 0, 0);
         border: none;
     }
 
-    .Bar1,
-    .Bar2,
-    .Bar3 {
+    .first-bar,
+    .second-bar,
+    .third-bar {
         width: 33px;
         height: 3.84px;
         background-color: #F2BC79;

@@ -1,14 +1,12 @@
 import '../style/Home.css';
 
-import Header from "../components/Header.js";
 import InputForm from "../components/InputForm.js";
 
 export const Home = () => {
     return (
         <div className="Home">
-            <Header />
-            <main className="MainWindow">
-                <div className="MainNavMenu">
+            <main className="main-window">
+                <div className="main-nav-menu">
                     <a href="#">Global ToDo</a>
                     <a href="#">Crafting Writs</a>
                     <a href="#">Vet Dungeons</a>

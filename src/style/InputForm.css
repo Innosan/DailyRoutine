@@ -4,7 +4,7 @@
     height: 53px;
 }
 
-.TaskField {
+.input-field {
     font-family: Josefin;
     font-size: 24px;
     width: 525px;
@@ -17,11 +17,11 @@
     transition: .5s;
 }
 
-.TaskField:focus {
+.input-field:focus {
     border-color: #F2BC79;
 }
 
-.AddTaskBtn {
+.add-task-btn {
     display: none;
     width: 46px;
     height: 46px;
@@ -31,21 +31,21 @@
     transition: .5s;
 }
 
-.AddTaskBtn:hover {
+.add-task-btn:hover {
     background-color: #7fe95f;
 }
 
-.AddTaskBtn img {
+.add-task-btn img {
     padding-top: 3px;
 }
 
 @media screen and (max-width: 425px) {
-    .AddTaskBtn {
+    .add-task-btn {
         display: block;
     }
 
-    .TaskField {
-        width: 350px;
+    .input-field {
+        width: 280px;
         margin-right: 27px;
     }
 }
