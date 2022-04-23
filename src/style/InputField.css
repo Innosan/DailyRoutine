@@ -7,17 +7,22 @@
 .TaskField {
     font-family: Josefin;
     font-size: 24px;
-    width: 483px;
+    width: 525px;
     height: 53px;
     background-color: white;
     border-radius: 38px;
     border: none;
-    margin-right: 27px;
     padding-left: 20px;
     box-sizing: border-box;
+    transition: .5s;
+}
+
+.TaskField:focus {
+    border-color: #F2BC79;
 }
 
 .AddTaskBtn {
+    display: none;
     width: 46px;
     height: 46px;
     border-radius: 50%;
@@ -32,4 +37,15 @@
 
 .AddTaskBtn img {
     padding-top: 3px;
+}
+
+@media screen and (max-width: 425px) {
+    .AddTaskBtn {
+        display: block;
+    }
+
+    .TaskField {
+        width: 350px;
+        margin-right: 27px;
+    }
 }

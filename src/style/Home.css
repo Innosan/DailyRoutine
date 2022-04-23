@@ -1,0 +1,31 @@
+.MainNavMenu {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin-right: 70px;
+}
+
+.MainNavMenu a {
+    font-size: 26px;
+    margin-bottom: 35px;
+    transition: .5s;
+    width: fit-content;
+}
+
+.MainNavMenu a:hover {
+    font-size: 36px;
+    color: #F2BC79;
+}
+
+.MainWindow {
+    display: flex;
+    margin: 70px 0 0 35px;
+}
+
+@media screen and (max-width: 425px) {
+
+    .MainNavMenu,
+    .HeaderNav {
+        display: none;
+    }
+}

@@ -1,0 +1,39 @@
+.LogoText {
+    font-size: 36px;
+    color: #F2BC79;
+}
+
+.HeaderNav {
+    display: flex;
+}
+
+.HeaderNav a {
+    font-size: 25px;
+    margin-inline-start: 20px;
+    margin-inline-end: 20px;
+    transition: .5s;
+    border-radius: 24px;
+}
+
+.HeaderNav a:hover {
+    padding: 8px 12px 6px 12px;
+    margin: -8px 8px -6px 8px;
+    color: #353535;
+    background-color: #F2BC79;
+    border-radius: 24px;
+}
+
+.CreateAccountBtn {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(116deg) brightness(103%) contrast(101%);
+}
+
+@media screen and (max-width: 425px) {
+    .LogoText {
+        margin: 20px 0 0 15px;
+    }
+
+    .CreateAccountBtn,
+    .HeaderNav {
+        display: none;
+    }
+}
