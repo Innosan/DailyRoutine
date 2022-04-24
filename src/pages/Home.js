@@ -1,12 +1,17 @@
+import React, { useContext, useEffect } from 'react';
+
 import '../style/Home.css';
 
 import InputForm from "../components/InputForm.js";
-import ToDoCard from '../components/ToDoCard';
+import ToDoList from '../components/ToDoList.js';
+import { FirebaseContext } from '../context/firebase/firebaseContext';
 
 export const Home = () => {
-    const notes = new Array(3)
-        .fill('')
-        .map((_, i) => ({ id: i, description: 'Note ' + (i + 1), completed: true }))
+    const { notes, fetchNotes, removeNote } = useContext(FirebaseContext)
+
+    useEffect(() => {
+        fetchNotes()
+    }, [])
     return (
         <div className="Home">
             <main className="main-window">
@@ -20,11 +25,9 @@ export const Home = () => {
                 </div>
                 <div className='todo-window'>
                     <InputForm />
-                    <ToDoCard notes={notes}></ToDoCard>
+                    <ToDoList notes={notes} onRemove={removeNote}></ToDoList>
                 </div>
             </main>
         </div>
     );
 }
-
-// export default Home;

@@ -40,4 +40,8 @@
     .main-window {
         margin-top: 40px;
     }
+
+    .todo-window {
+        width: 355px;
+    }
 }

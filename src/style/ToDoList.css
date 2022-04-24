@@ -1,3 +1,24 @@
+.todo-list {
+    height: 520px;
+    overflow-y: scroll;
+    padding-right: 25px;
+    overflow-x: hidden;
+}
+
+.todo-list::-webkit-scrollbar {
+    width: .5em;
+}
+
+.todo-list::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 23px;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+    background-color: #e0caaf;
+    border-radius: 23px;
+}
+
 .todo-card {
     display: flex;
     justify-content: space-between;
@@ -6,7 +27,7 @@
     width: 525px;
     height: 70px;
     border-radius: 23px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .todo-description {
@@ -60,7 +81,6 @@ input[type="checkbox"]+span:before {
     cursor: pointer;
     height: 37px;
     transition: .5s;
-
 }
 
 #todo-status:checked+span:before {
@@ -69,4 +89,20 @@ input[type="checkbox"]+span:before {
     background-position: center;
     background-size: 25px;
     color: white;
+}
+
+@media screen and (max-width: 425px) {
+    .todo-card {
+        width: 355px;
+        height: 60px;
+    }
+
+    .todo-description {
+        font-size: 22px;
+    }
+
+    .todo-list {
+        height: 390px;
+        overflow-y: scroll;
+    }
 }

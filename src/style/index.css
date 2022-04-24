@@ -3,6 +3,18 @@
   src: url("/src/fonts/JosefinSans-Regular.ttf");
 }
 
+@keyframes note {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(2000px);
+  }
+}
+
 body {
   background-color: #353535;
   margin: 0;
@@ -27,4 +39,12 @@ header {
 a {
   text-decoration: none;
   color: #FFFFFF;
+}
+
+.note-enter-active {
+  animation: note 1s ease-in reverse;
+}
+
+.note-exit-active {
+  animation: note 1s ease-out forwards;
 }
