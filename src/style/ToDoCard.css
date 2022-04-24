@@ -1,0 +1,72 @@
+.todo-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    width: 525px;
+    height: 70px;
+    border-radius: 23px;
+    margin-bottom: 25px;
+}
+
+.todo-description {
+    display: flex;
+    justify-self: left;
+    font-size: 29px;
+    margin: 0;
+}
+
+.todo-delete-btn {
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin-right: 21px;
+    background-color: transparent;
+    color: #E95D5D;
+    font-size: 46px;
+    border: none;
+    transition: .5s;
+}
+
+.todo-delete-btn:hover {
+    color: #bb2424;
+}
+
+label {
+    width: 37px;
+    height: 37px;
+    margin-left: 21px;
+    border-radius: 11px;
+    transition: .5s;
+}
+
+label:hover {
+    box-shadow: 0px 0px 10px 1px #b18652;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    margin: 0;
+    z-index: -1;
+}
+
+input[type="checkbox"]+span:before {
+    content: '';
+    background-color: #353535;
+    border-radius: 11px;
+    display: inline-block;
+    width: 37px;
+    cursor: pointer;
+    height: 37px;
+    transition: .5s;
+
+}
+
+#todo-status:checked+span:before {
+    background-image: url('../icons/checked.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px;
+    color: white;
+}

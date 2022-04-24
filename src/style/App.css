@@ -4,6 +4,11 @@
     margin: 0 auto;
 }
 
+input[type="text"]:focus {
+    outline: none;
+    border: 3px solid #F2BC79 !important;
+}
+
 @media screen and (max-width: 425px) {
     .App {
         width: 100%;

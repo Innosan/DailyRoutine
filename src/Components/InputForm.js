@@ -1,15 +1,25 @@
+import { useState } from 'react';
+
 import '../style/InputForm.css';
 
 import plus from '../icons/Plus.png'
 
 function InputForm() {
+    // const [userInput, setUserInput] = useState('');
+
     return (
-        <div className='InputForm'>
-            <input className="input-field" type="text" name="input-task" id="input-task" />
+        <form className='InputForm'>
+            <input
+                // value={userInput}
+                className="input-field"
+                type="text"
+                id="input-task"
+                placeholder='Task...'
+            />
             <button className='add-task-btn'>
-                <img src={plus} alt="Add Task" />
+                <img src={plus} alt="" />
             </button>
-        </div>
+        </form>
     );
 }
 

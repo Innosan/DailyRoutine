@@ -11,14 +11,10 @@
     height: 53px;
     background-color: white;
     border-radius: 38px;
-    border: none;
+    border: 1px solid white;
     padding-left: 20px;
     box-sizing: border-box;
     transition: .5s;
-}
-
-.input-field:focus {
-    border-color: #F2BC79;
 }
 
 .add-task-btn {
