@@ -2,6 +2,7 @@
     font-family: Josefin;
     width: 1040px;
     margin: 0 auto;
+    color: white;
 }
 
 body::-webkit-scrollbar {
