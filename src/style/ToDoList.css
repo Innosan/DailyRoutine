@@ -38,6 +38,11 @@
     color: #353535 !important;
 }
 
+.todo-description-done {
+    color: #b18652;
+    text-decoration: line-through;
+}
+
 .todo-delete-btn {
     width: auto;
     height: auto;

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 
 import '../style/Home.css';
-import { deleteUser } from '../store/slices/userSlice'
+import { removeUser, setUser } from '../store/slices/userSlice'
 
 import InputForm from "../components/InputForm.js";
 import ToDoList from '../components/ToDoList.js';
@@ -14,12 +14,24 @@ import { useNavigate } from 'react-router-dom';
 export const Home = () => {
     const { notes, fetchNotes, removeNote } = useContext(FirebaseContext)
 
-    let navigate = useNavigate();
+    const user = localStorage.getItem("user");
+    let json = JSON.parse(user);
 
-    const { isAuth, token, id } = useAuth();
+    const { userId, email, isAuth } = useAuth();
+
+    let navigate = useNavigate();
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        fetchNotes()
+        if (json != null || isAuth) {
+            dispatch(setUser({
+                email: json.email,
+                id: json.id,
+                token: json.token,
+                refreshToken: json.refreshToken,
+            }));
+            fetchNotes(json)
+        }
     }, [])
 
     return isAuth ? (
@@ -32,8 +44,7 @@ export const Home = () => {
                     <a href="#">Daily Dungeon</a>
                     <a href="#">Summary</a>
                     <a href="#">Useful links</a>
-                    {/* <p>{token}</p>
-                    <p>{id}</p> */}
+                    <button onClick={() => dispatch(removeUser())}>Log Out from {email}</button>
                 </div>
                 <div className='todo-window'>
                     <InputForm />
@@ -41,7 +52,5 @@ export const Home = () => {
                 </div>
             </main>
         </div>
-    ) : (
-        navigate('/signin')
-    );
+    ) : navigate("/signin");
 }

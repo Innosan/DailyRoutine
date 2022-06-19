@@ -1,15 +1,13 @@
 import React, { useReducer } from 'react'
 import axios from 'axios'
 
-
 import { FirebaseContext } from './firebaseContext';
 import { firebaseReducer } from './firebaseReducer';
 import { ADD_NOTE, FETCH_NOTES, REMOVE_NOTE } from '../types';
 
 import { useAuth } from '../../hooks/userAuth'
 
-const url = "https://dailyroutine-97a3e-default-rtdb.europe-west1.firebasedatabase.app";
-const key = "HDTxtd6t1xok3MO5rLrjkPB2OIsTFMFjFB31W4ir";
+const url = process.env.REACT_APP_FIREBASE_DB_URL;
 
 export const FirebaseState = ({ children }) => {
     const initialState = {
@@ -17,10 +15,10 @@ export const FirebaseState = ({ children }) => {
     }
     const [state, dispatch] = useReducer(firebaseReducer, initialState)
 
-    const { token, id } = useAuth();
+    const { token, userId } = useAuth();
 
-    const fetchNotes = async () => {
-        const resault = await axios.get((url) + '' + '/notes.json');
+    const fetchNotes = async (json) => {
+        const resault = await axios.get((url) + '/notes/' + json.id + '.json?auth=' + json.token);
         // console.log("token, id");
         const payload = Object.keys(resault.data).map(key => {
             return {
@@ -40,8 +38,8 @@ export const FirebaseState = ({ children }) => {
             title
         }
 
-        const resault = await axios.post((url) + '/notes.json', note);
-
+        const resault = await axios.post((url) + '/notes/' + userId + '.json?auth=' + token, note);
+        console.log(token);
         console.log('addNote', resault.data);
 
         const payload = {
@@ -51,12 +49,12 @@ export const FirebaseState = ({ children }) => {
 
         dispatch({
             type: ADD_NOTE,
-            payload: id
+            payload
         })
     }
 
     const removeNote = async id => {
-        await axios.delete((url) + '/notes/' + (id) + ".json");
+        await axios.delete((url) + '/notes/' + userId + '/' + (id) + ".json?auth=" + token);
 
         dispatch({
             type: REMOVE_NOTE,
