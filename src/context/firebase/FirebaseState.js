@@ -6,7 +6,10 @@ import { FirebaseContext } from './firebaseContext';
 import { firebaseReducer } from './firebaseReducer';
 import { ADD_NOTE, FETCH_NOTES, REMOVE_NOTE } from '../types';
 
-const url = process.env.REACT_APP_DB_URL;
+import { useAuth } from '../../hooks/userAuth'
+
+const url = "https://dailyroutine-97a3e-default-rtdb.europe-west1.firebasedatabase.app";
+const key = "HDTxtd6t1xok3MO5rLrjkPB2OIsTFMFjFB31W4ir";
 
 export const FirebaseState = ({ children }) => {
     const initialState = {
@@ -14,9 +17,11 @@ export const FirebaseState = ({ children }) => {
     }
     const [state, dispatch] = useReducer(firebaseReducer, initialState)
 
-    const fetchNotes = async () => {
-        const resault = await axios.get((url) + '/notes.json');
+    const { token, id } = useAuth();
 
+    const fetchNotes = async () => {
+        const resault = await axios.get((url) + '' + '/notes.json');
+        // console.log("token, id");
         const payload = Object.keys(resault.data).map(key => {
             return {
                 ...resault.data[key],
@@ -46,7 +51,7 @@ export const FirebaseState = ({ children }) => {
 
         dispatch({
             type: ADD_NOTE,
-            payload
+            payload: id
         })
     }
 
