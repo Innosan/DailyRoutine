@@ -9,9 +9,9 @@ import { useAuth } from '../hooks/userAuth'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import InputForm from "../components/InputForm.js";
-import ToDoList from '../components/ToDoList.js';
-import { Button } from '../components/LogInButton'
+import InputForm from "../Components/InputForm.js";
+import ToDoList from '../Components/ToDoList.js';
+import { Button } from '../Components/LogInButton'
 
 export const Home = () => {
     const { notes, fetchNotes, removeNote } = useContext(FirebaseContext)

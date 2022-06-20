@@ -3,7 +3,7 @@ import { FirebaseState } from "./context/firebase/FirebaseState";
 
 import "./style/App.css";
 
-import Header from "./components/Header";
+import Header from "./Components/Header";
 
 import { Home } from "./pages/Home.js";
 import { Calculator } from "./pages/Calculator.js";
