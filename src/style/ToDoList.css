@@ -21,7 +21,6 @@
 
 .todo-description {
     display: flex;
-    width: 200px;
     justify-self: left;
     font-size: 29px;
     overflow-wrap: anywhere;
@@ -91,6 +90,7 @@ input[type="checkbox"]+span:before {
 @media screen and (max-width: 425px) {
     .todo-description {
         font-size: 22px;
+        width: 200px;
     }
 
     .todo-list {
