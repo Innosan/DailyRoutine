@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/DailyRoutine/static/css/main.4d194e58.css",
-    "main.js": "/DailyRoutine/static/js/main.e2895c78.js",
+    "main.js": "/DailyRoutine/static/js/main.225842bb.js",
     "static/media/JosefinSans-Regular.ttf": "/DailyRoutine/static/media/JosefinSans-Regular.511e3c3173e1aba79ba0.ttf",
     "static/media/account.png": "/DailyRoutine/static/media/account.8cfc8dbcf6d56a167888.png",
     "index.html": "/DailyRoutine/index.html",
     "main.4d194e58.css.map": "/DailyRoutine/static/css/main.4d194e58.css.map",
-    "main.e2895c78.js.map": "/DailyRoutine/static/js/main.e2895c78.js.map"
+    "main.225842bb.js.map": "/DailyRoutine/static/js/main.225842bb.js.map"
   },
   "entrypoints": [
     "static/css/main.4d194e58.css",
-    "static/js/main.e2895c78.js"
+    "static/js/main.225842bb.js"
   ]
 }
