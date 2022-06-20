@@ -7,12 +7,16 @@ import './firebase'
 import './style/index.css';
 
 import App from './App';
+import { HashRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <HashRouter basename='/'>
+        <App />
+
+      </HashRouter>
     </Provider>
   </React.StrictMode>
 );
