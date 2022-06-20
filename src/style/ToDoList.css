@@ -19,21 +19,12 @@
     border-radius: 23px;
 }
 
-.todo-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    width: 525px;
-    height: 70px;
-    border-radius: 23px;
-    margin-bottom: 20px;
-}
-
 .todo-description {
     display: flex;
+    width: 200px;
     justify-self: left;
     font-size: 29px;
+    overflow-wrap: anywhere;
     margin: 0;
     color: #353535 !important;
 }
@@ -98,11 +89,6 @@ input[type="checkbox"]+span:before {
 }
 
 @media screen and (max-width: 425px) {
-    .todo-card {
-        width: 355px;
-        height: 60px;
-    }
-
     .todo-description {
         font-size: 22px;
     }

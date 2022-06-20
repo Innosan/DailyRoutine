@@ -1,10 +1,11 @@
-import { Form } from './Form'
-
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+
 import { setUser } from '../store/slices/userSlice'
+
+import { Form } from './Form'
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -26,14 +27,14 @@ const Login = () => {
                 }))
                 localUser = { email: user.email, id: user.uid, token: user.accessToken, refreshToken: user.refreshToken};
                 localStorage.setItem('user', JSON.stringify(localUser));
-                console.log(localUser);
+
                 history('/');
             })
-            .catch(() => alert("Ебобо, аккаунта нет!"))
+            .catch(() => alert("Таких данных нет в списке участников клана НАС РАНО, вы ошиблись!"))
     }
 
     return (
-        <Form title="login" handleClick={handleLogin}></Form>
+        <Form title="Log In" handleClick={handleLogin}></Form>
     )
 }
 

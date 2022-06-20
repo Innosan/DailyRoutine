@@ -1,6 +1,9 @@
 .greeting-msg {
+    width: fit-content;
+    margin: 0;
+    margin: 35px 0 45px 0px;
+    font-size: 41px;
     font-weight: 500;
-    margin: 50px 0 0 75px;
 }
 
 p {
@@ -14,4 +17,10 @@ h1 {
 .link {
     color: #F2BC79;
 
+}
+
+@media screen and (max-width: 425px) {
+    .greeting-msg {
+        font-size: 34px;
+    }
 }

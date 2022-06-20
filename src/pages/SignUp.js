@@ -1,12 +1,12 @@
-import { Signup, SignUpForm } from "components/SignUpForm";
+import { SignUpForm } from "components/SignUpForm";
 import { Link } from "react-router-dom";
 
 import '../style/SignUp.css'
 
 const SignUp = () => {
     return (
-        <div>
-            <h1>Ya' still walkin' with soul? Try to lose it.</h1>
+        <div className="wrapper">
+            <h1 className="greeting-msg">Ya' still walkin' with soul? Try to lose it.</h1>
 
             <SignUpForm />
 

@@ -5,6 +5,10 @@
     color: white;
 }
 
+button {
+    font-family: Josefin;
+}
+
 body::-webkit-scrollbar {
     width: .5em;
 }

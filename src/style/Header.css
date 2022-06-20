@@ -23,16 +23,49 @@
     border-radius: 24px;
 }
 
-.create-account-btn {
+.create-account-btn img {
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(116deg) brightness(103%) contrast(101%);
+    transition: .3s;
+}
+
+.create-account-btn img:hover {
+    filter: invert(83%) sepia(36%) saturate(713%) hue-rotate(326deg) brightness(99%) contrast(92%);
+}
+
+.logout-btn img:hover {
+    filter: invert(83%) sepia(36%) saturate(713%) hue-rotate(326deg) brightness(99%) contrast(92%);
+}
+
+.logout-btn {
+    background: transparent;
+    border: none;
+    display: none;
+}
+
+.logout-btn img {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(116deg) brightness(103%) contrast(101%);
+    transition: .3s;
 }
 
 @media screen and (max-width: 425px) {
     .logo-text {
-        margin: 20px 0 0 15px;
+        margin: 0 0 0 15px;
     }
 
-    .create-account-btn,
+    .logout-btn {
+        display: block;
+    }
+
+    .create-account-btn img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logout-btn img {
+        width: 30px;
+        height: 30px;
+    }
+
     .header-nav {
         display: none;
     }

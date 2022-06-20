@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react';
 
-import 'style/InputForm.css';
-
-import plus from 'icons/Plus.png'
 import { FirebaseContext } from 'context/firebase/firebaseContext';
+
+import 'style/InputForm.css';
+import plus from 'icons/Plus.png'
 
 function InputForm() {
     const [value, setValue] = useState('');

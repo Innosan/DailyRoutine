@@ -3,6 +3,7 @@ import axios from 'axios'
 
 import { FirebaseContext } from './firebaseContext';
 import { firebaseReducer } from './firebaseReducer';
+
 import { ADD_NOTE, FETCH_NOTES, REMOVE_NOTE } from '../types';
 
 import { useAuth } from '../../hooks/userAuth'
@@ -19,7 +20,7 @@ export const FirebaseState = ({ children }) => {
 
     const fetchNotes = async (json) => {
         const resault = await axios.get((url) + '/notes/' + json.id + '.json?auth=' + json.token);
-        // console.log("token, id");
+
         const payload = Object.keys(resault.data).map(key => {
             return {
                 ...resault.data[key],
@@ -39,8 +40,6 @@ export const FirebaseState = ({ children }) => {
         }
 
         const resault = await axios.post((url) + '/notes/' + userId + '.json?auth=' + token, note);
-        console.log(token);
-        console.log('addNote', resault.data);
 
         const payload = {
             ...note,

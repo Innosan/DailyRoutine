@@ -1,13 +1,13 @@
 import { useDispatch } from "react-redux";
-import { setUser } from '../store/slices/userSlice'
-import { Form } from './Form'
-
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
-
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 import { getDatabase, set, ref } from "firebase/database";
+
+import { setUser } from '../store/slices/userSlice'
+
+import { Form } from './Form'
 
 const SignUpForm = () => {
     const dispatch = useDispatch();
@@ -15,6 +15,8 @@ const SignUpForm = () => {
 
     const handleRegister = (email, password, name) => {
         const auth = getAuth();
+
+        let localUser;
 
         createUserWithEmailAndPassword(auth, email, password)
             .then(({user}) => {
@@ -25,7 +27,11 @@ const SignUpForm = () => {
                     userId: user.uid,
                     token: user.accessToken,
                 }))
+                localUser = { email: user.email, id: user.uid, token: user.accessToken, refreshToken: user.refreshToken};
+                localStorage.setItem('user', JSON.stringify(localUser));
+
                 writeUserData(user, name);
+                
                 history('/');
 
             })
