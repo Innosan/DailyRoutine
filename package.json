@@ -2,7 +2,7 @@
   "name": "dailyroutine",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://Innosan.github.io/DailyRoutine",
+  "homepage": "https://Innosan.github.io/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
     "axios": "^0.26.1",
