@@ -18,11 +18,11 @@ function App() {
         <div className="App">
           <Header />
           <Routes>
-            <Route path={"/"} element={<Home />} />
-            <Route path={"/calc"} element={<Calculator />} />
-            <Route path={"/signup"} element={<SignUp />} />
-            <Route path={"/signin"} element={<SignIn />} />
-            <Route path="*" element={<Navigate to="/signin" replace />} />
+            <Route path={process.env.PUBLIC_URL + "/"} element={<Home />} />
+            <Route path={process.env.PUBLIC_URL + "/calc"} element={<Calculator />} />
+            <Route path={process.env.PUBLIC_URL + "/signup"} element={<SignUp />} />
+            <Route path={process.env.PUBLIC_URL + "/signin"} element={<SignIn />} />
+            <Route path="*" element={<Navigate to={process.env.PUBLIC_URL + "/signin"} replace />} />
           </Routes>
         </div>
       </BrowserRouter>
