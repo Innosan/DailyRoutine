@@ -21,12 +21,18 @@ export const FirebaseState = ({ children }) => {
     const fetchNotes = async (json) => {
         const resault = await axios.get((url) + '/notes/' + json.id + '.json?auth=' + json.token);
 
-        const payload = Object.keys(resault.data).map(key => {
-            return {
-                ...resault.data[key],
-                id: key
-            }
-        })
+        let payload;
+        if (resault.data == null) {
+            return;
+        }
+        else {
+            payload = Object.keys(resault.data).map(key => {
+                return {
+                    ...resault.data[key],
+                    id: key
+                }
+            })
+        }
 
         dispatch({
             type: FETCH_NOTES,

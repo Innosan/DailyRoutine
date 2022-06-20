@@ -39,6 +39,11 @@ export const Home = () => {
         )
     }, [])
 
+    const dwdq = () => {
+        dispatch(removeUser())
+        notes = [];
+    }
+
     return isAuth ? (
         <div className="Home">
             <main className="main-window">
@@ -49,7 +54,7 @@ export const Home = () => {
                     <a href="#">Daily Dungeon</a>
                     <a href="#">Summary</a>
                     <a href="#">Useful links</a>
-                    <Button onClick={() => dispatch(removeUser())}>Log Out</Button>
+                    <Button onClick={dwdq}>Log Out</Button>
                 </div>
                 <div className='todo-window'>
                     <InputForm />
@@ -58,4 +63,6 @@ export const Home = () => {
             </main>
         </div>
     ) : navigate("/signin");
+
+
 }

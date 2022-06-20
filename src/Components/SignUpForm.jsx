@@ -13,7 +13,7 @@ const SignUpForm = () => {
     const dispatch = useDispatch();
     const history = useNavigate();
 
-    const handleRegister = (email, password, name) => {
+    const handleRegister = (email, password) => {
         const auth = getAuth();
 
         let localUser;
@@ -22,15 +22,15 @@ const SignUpForm = () => {
             .then(({user}) => {
                 console.log(user);
                 dispatch(setUser({
-                    displayName: name,
                     email: user.email,
-                    userId: user.uid,
+                    id: user.uid,
                     token: user.accessToken,
+                    refreshToken: user.refreshToken,
                 }))
                 localUser = { email: user.email, id: user.uid, token: user.accessToken, refreshToken: user.refreshToken};
                 localStorage.setItem('user', JSON.stringify(localUser));
 
-                writeUserData(user, name);
+                writeUserData(user);
                 
                 history('/');
 
@@ -43,10 +43,9 @@ const SignUpForm = () => {
     )
 }
 
-function writeUserData(user, name) {
+function writeUserData(user) {
   const db = getDatabase();
   set(ref(db, 'users/' + user.uid), {
-    displayName: name,
     email: user.email,
     id: user.uid,
     token: user.accessToken,
